@@ -1,0 +1,54 @@
+name: SonarQube Analysis
+
+on:
+  push:
+    branches: [ "main" ] # Adjust as needed
+  pull_request:
+    branches: [ "main" ] # Adjust as needed
+  workflow_dispatch:
+
+permissions:
+  pull-requests: read # Allows SonarQube to decorate PRs with analysis results
+
+jobs:
+  sonarQubeAnalysis:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout the repository
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # Step 2: Set up JDK 17 for Android development
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+          cache: gradle
+
+      # Step 3: Grant execute permissions for Gradle wrapper
+      - name: Grant execute permission for gradlew
+        run: chmod +x ./gradlew
+
+      # Step 4: Build the project (required before analysis)
+      - name: Build the project
+        run: ./gradlew build --info --stacktrace
+
+      # Step 5: Run SonarQube analysis
+      - name: Analyze with SonarQube
+        uses: SonarSource/sonarqube-scan-action@v1.1.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Needed for PR analysis
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}   # SonarQube token stored in repository secrets
+          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }} # SonarQube server URL stored in secrets
+        with:
+          args: >
+            -Dsonar.projectKey=com.example.assetsync
+            -Dsonar.organization=<YourOrganizationKey> # For SonarCloud, specify your organization key
+            -Dsonar.sources=app/src/main/java
+            -Dsonar.tests=app/src/test/java,app/src/androidTest/java
+            -Dsonar.java.binaries=app/build
+            -Dsonar.android.lint.reportPaths=app/build/reports/lint-results.xml
+            -Dsonar.junit.reportPaths=app/build/test-results/test
+            -Dsonar.coverage.jacoco.xmlReportPaths=app/build/reports/jacoco/test/jacocoTestReport.xml
