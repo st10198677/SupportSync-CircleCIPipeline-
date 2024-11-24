@@ -1,47 +1,54 @@
-version: 2.1
+# GitHub Actions workflow to run SonarQube analysis for an Android project
+name: SonarQube Analysis
+
+on:
+  push:
+    branches:
+      - main  # Trigger on pushes to the main branch
+  pull_request:
+    branches:
+      - main  # Trigger on pull requests to the main branch
+  workflow_dispatch:
+
+permissions:
+  pull-requests: read  # Allows SonarQube to decorate PRs with analysis results
 
 jobs:
-  say-hello:
-    docker:
-      - image: cimg/base:stable
-    steps:
-      - checkout
-      - run:
-          name: "Say hello"
-          command: "echo Hello, World!"
+  sonarQubeAnalysis:
+    runs-on: ubuntu-latest
 
-  sonarqube:
-    working_directory: ~/build
-    docker:
-      - image: sonarsource/sonar-scanner-cli:latest  # Use SonarQube's official scanner image
-    resource_class: small
     steps:
-      - checkout  # Ensure code is checked out at the start
-      - attach_workspace:
-          at: ~/workspace
-      - run:
-          name: "Run SonarQube scan"
-          command: |
-            # Define the branch name, defaulting to 'main' if CIRCLE_BRANCH is not set
-            SONAR_BRANCH="${CIRCLE_BRANCH:-main}"
-            echo "Sonar branch value is: $SONAR_BRANCH"
-            echo "Sonar organization value is: $SONAR_ORG"
-            
-            # Run SonarQube scan with exclusions for C/C++/Objective-C
-            sonar-scanner \
-              -Dsonar.projectKey="$SONAR_PROJECT_KEY" \
-              -Dsonar.organization="$SONAR_ORG" \
-              -Dsonar.host.url="https://sonarcloud.io" \
-              -Dsonar.exclusions="**/android/**,**/ios/**" \
-              -Dsonar.login="$SONAR_TOKEN" \
-              -Dsonar.branch.name="$SONAR_BRANCH" \
-              -Dsonar.sources="." \
-              -Dsonar.c.file.suffixes=- \
-              -Dsonar.cpp.file.suffixes=- \
-              -Dsonar.objc.file.suffixes=-
+      # Step 1: Checkout the repository
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-workflows:
-  say-hello-workflow:
-    jobs:
-      - say-hello
-      - sonarqube
+      # Step 2: Verify that the project structure is correct (debugging step)
+      - name: List project files
+        run: ls -la
+
+      # Step 3: Grant execute permissions for the Gradle wrapper
+      # Ensure that the `gradlew` file exists and is executable
+      - name: Grant execute permission for gradlew
+        run: chmod +x ./gradlew
+
+      # Step 4: Build the project
+      - name: Build the project
+        run: ./gradlew build --info --stacktrace
+
+      # Step 5: Run SonarQube analysis
+      - name: Analyze with SonarQube
+        uses: SonarSource/sonarqube-scan-action@v1.1.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed for PR analysis
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}    # SonarQube token stored in repository secrets
+          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}  # SonarQube server URL stored in secrets
+        with:
+          args: >
+            -Dsonar.projectKey=com.example.assetsync
+            -Dsonar.organization=<YourOrganizationKey>  # Replace with your SonarCloud organization key if applicable
+            -Dsonar.sources=app/src/main/java
+            -Dsonar.tests=app/src/test/java,app/src/androidTest/java
+            -Dsonar.java.binaries=app/build
+            -Dsonar.android.lint.reportPaths=app/build/reports/lint-results.xml
+            -Dsonar.junit.reportPaths=app/build/test-results/test
+            -Dsonar.coverage.jacoco.xmlReportPaths=app/build/reports/jacoco/test/jacocoTestReport.xml
