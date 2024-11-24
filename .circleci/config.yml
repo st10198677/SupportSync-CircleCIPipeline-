@@ -2,30 +2,62 @@
 # See: https://circleci.com/docs/configuration-reference
 version: 2.1
 
-# Define a job to be invoked later in a workflow.
-# See: https://circleci.com/docs/jobs-steps/#jobs-overview & https://circleci.com/docs/configuration-reference/#jobs
+# Define jobs
 jobs:
   say-hello:
-    # Specify the execution environment. You can specify an image from Docker Hub or use one of our convenience images from CircleCI's Developer Hub.
-    # See: https://circleci.com/docs/executor-intro/ & https://circleci.com/docs/configuration-reference/#executor-job
+    # Specify the execution environment
     docker:
-      # Specify the version you desire here
-      # See: https://circleci.com/developer/images/image/cimg/base
       - image: cimg/base:current
 
-    # Add steps to the job
-    # See: https://circleci.com/docs/jobs-steps/#steps-overview & https://circleci.com/docs/configuration-reference/#steps
     steps:
-      # Checkout the code as the first step.
+      # Checkout the code
       - checkout
+
+      # Run a basic "Hello World" command
       - run:
           name: "Say hello"
           command: "echo Hello, World!"
 
-# Orchestrate jobs using workflows
-# See: https://circleci.com/docs/workflows/ & https://circleci.com/docs/configuration-reference/#workflows
+  sonarqube-analysis:
+    # Specify the execution environment
+    docker:
+      - image: cimg/openjdk:17.0  # Use OpenJDK 17 for Android development
+
+    working_directory: ~/project  # Define the working directory
+
+    steps:
+      # Step 1: Checkout the code
+      - checkout
+
+      # Step 2: Grant execute permissions for Gradle wrapper
+      - run:
+          name: Grant execute permission for gradlew
+          command: chmod +x ./gradlew
+
+      # Step 3: Build the project
+      - run:
+          name: Build the project
+          command: ./gradlew build --info --stacktrace
+
+      # Step 4: Run SonarQube analysis
+      - run:
+          name: Analyze with SonarQube
+          command: |
+            sonar-scanner \
+              -Dsonar.projectKey=com.example.assetsync \
+              -Dsonar.organization=<YourOrganizationKey> \
+              -Dsonar.host.url=$SONAR_HOST_URL \
+              -Dsonar.login=$SONAR_TOKEN \
+              -Dsonar.sources=app/src/main/java \
+              -Dsonar.tests=app/src/test/java,app/src/androidTest/java \
+              -Dsonar.java.binaries=app/build \
+              -Dsonar.android.lint.reportPaths=app/build/reports/lint-results.xml \
+              -Dsonar.junit.reportPaths=app/build/test-results/test \
+              -Dsonar.coverage.jacoco.xmlReportPaths=app/build/reports/jacoco/test/jacocoTestReport.xml
+
+# Workflows
 workflows:
-  say-hello-workflow: # This is the name of the workflow, feel free to change it to better match your workflow.
-    # Inside the workflow, you define the jobs you want to run.
+  main-workflow:
     jobs:
       - say-hello
+      - sonarqube-analysis
