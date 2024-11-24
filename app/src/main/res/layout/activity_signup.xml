@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:gravity="center_horizontal"
+    android:background="@android:color/white">
+
+    <!-- Logo Image -->
+    <ImageView
+        android:id="@+id/imageLogo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/asset_sync_logo"
+    android:contentDescription="Logo"
+    android:layout_marginBottom="16dp" />
+
+    <!-- Heading TextView -->
+    <TextView
+        android:id="@+id/textViewHeading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Create an Account"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="24dp" />
+
+    <!-- First Name EditText -->
+    <EditText
+        android:id="@+id/editTextFirstName"
+        android:layout_width="365dp"
+        android:layout_height="70dp"
+        android:layout_marginBottom="16dp"
+        android:hint="First Name"
+        android:inputType="textPersonName" />
+
+    <!-- Email Address EditText -->
+    <EditText
+        android:id="@+id/editTextEmail"
+        android:layout_width="365dp"
+        android:layout_height="70dp"
+        android:layout_marginBottom="16dp"
+        android:hint="Email Address"
+        android:inputType="textEmailAddress" />
+
+    <!-- Password EditText -->
+    <EditText
+        android:id="@+id/editTextPassword"
+        android:layout_width="365dp"
+        android:layout_height="70dp"
+        android:layout_marginBottom="16dp"
+        android:hint="Password"
+        android:inputType="textPassword" />
+
+    <!-- Confirm Password EditText -->
+    <EditText
+        android:id="@+id/editTextConfirmPassword"
+        android:layout_width="365dp"
+        android:layout_height="70dp"
+        android:layout_marginBottom="24dp"
+        android:hint="Confirm Password"
+        android:inputType="textPassword" />
+
+    <!-- drop down for the indication of role  -->
+    <Spinner
+        android:id="@+id/spinnerRole"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:entries="@array/roles_array" />
+
+
+    <!-- Sign Up Button -->
+    <Button
+        android:id="@+id/buttonSignUp"
+        android:layout_width="365dp"
+        android:layout_height="55dp"
+        android:layout_marginBottom="16dp"
+        android:background="@color/Blue"
+        android:text="Sign Up"
+        android:textColor="@android:color/white" />
+
+    <!-- Login Text (Clickable) -->
+    <TextView
+        android:id="@+id/textViewLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Already have an account? login"
+        android:textColor="@color/Blue"
+        android:textSize="16sp"
+        android:layout_gravity="center_horizontal"
+        android:padding="8dp"
+        android:layout_marginTop="16dp"
+        android:clickable="true"
+        android:focusable="true" />
+        
+
+</LinearLayout>

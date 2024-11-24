@@ -1,0 +1,71 @@
+<resources>
+    <string name="app_name">AssetSync</string>
+    <string name="quantity_of_boxes">Quantity of Boxes:</string>
+    <string name="app_logo">App Logo</string>
+    <string name="assethub">AssetHub</string>
+    <string name="driver_id">Driver ID:</string>
+    <string name="email_address">Email Address</string>
+    <string name="password">Password</string>
+    <string name="thank_you_for_using_assethub">Thank you for using AssetHub!</string>
+    <string name="confirm_delivery">Confirm Delivery</string>
+    <string name="start_delivery">Start Delivery</string>
+    <string name="powered_by_assethub">Powered by AssetHub</string>
+    <string name="delivery_location">Delivery Location:</string>
+    <string name="login_to_assethub">Login to AssetHub</string>
+    <string name="create_an_account">Create an Account</string>
+    <string name="login_to_stockhub">Login to StockHub</string>
+    <string name="forgot_password">Forgot Password ?</string>
+    <string name="assetsync">AssetSync</string>
+    <string name="delivery_image">Delivery Image:</string>
+    <string name="manage_your_assets_effortlessly">Manage your assets effortlessly</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="already_have_an_account_login">Already have an account? login</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="logo">Logo</string>
+    <string name="first_name">First Name</string>
+    <string name="delivery_completion">Delivery Completion</string>
+    <string name="delivery_recipient">Delivery Recipient:</string>
+    <string name="stock_hub">Stock Hub</string>
+    <string name="light_dark_mode">Light/Dark Mode</string>
+    <string name="please_enter_your_name_email_address_and_employee_id_number_we_ll_send_your_password_information_shortly">Please enter your Name, Email Address, and Employee ID number. We\'ll send your Password Information shortly.</string>
+    <string name="forgot_password1">FORGOT PASSWORD</string>
+    <string name="recover_password">Recover Password</string>
+    <string name="enter_your_employee_number">Enter your employee number</string>
+    <string name="enter_your_email">Enter your email</string>
+    <string name="enter_your_name">Enter your name</string>
+    <string name="navigate_back">Navigate Back</string>
+    <string name="capture_image">Capture Image</string>
+    <string name="captured_image">Captured Image</string>
+    <string name="logout">Logout</string>
+    <string name="employee_id">Employee ID:</string>
+    <string name="select_image">Select Image</string>
+    <string name="location">Location:</string>
+    <string name="purchased_2021_12_01">Purchased: 2021-12-01</string>
+    <string name="asset_8_headphones">Asset 8: Headphones</string>
+    <string name="purchased_2023_04_15">Purchased: 2023-04-15</string>
+    <string name="model_xps_13">Model: XPS 13</string>
+    <string name="asset_hub">Asset Hub</string>
+    <string name="welcome_morena_nkosi">Welcome Morena Nkosi</string>
+    <string name="asset_model">Asset Model:</string>
+    <string name="asset_make">Asset Make:</string>
+    <string name="asset_category">Asset Category:</string>
+    <string name="report_issue">Report Issue</string>
+    <string name="welcome">Welcome</string>
+    <string name="report_an_issue">Report an Issue</string>
+    <string name="describe_the_issue">Describe the issue</string>
+    <string name="submit_issue">Submit Issue</string>
+    <string name="enter_4_digit_passcode">Enter 4-digit passcode</string>
+    <string name="stock_hub_dashboard">Stock Hub Dashboard</string>
+    <string name="go_to_driver_page">Driver Page</string>
+    <string name="delivery_summary">Delivery Summary</string>
+
+    <!-- the names/ items in the spinner -->
+    <string-array name="roles_array">
+        <item>User</item>
+        <item>Community Worker</item>
+        <item>Admin</item>
+    </string-array>
+
+    </resources>
+
+

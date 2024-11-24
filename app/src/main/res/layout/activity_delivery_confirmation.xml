@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:gravity="center_horizontal"
+    android:background="@drawable/background_spiral">
+
+    <!-- Header Section -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingBottom="16dp">
+
+        <ImageView
+            android:id="@+id/imageLogo"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/logo"
+            android:background="@drawable/rounded_logo_background"
+            android:padding="6dp"
+            android:scaleType="fitCenter"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/app_logo"
+            android:layout_marginEnd="8dp" />
+
+        <TextView
+            android:id="@+id/textViewAppName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/stock_hub"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="@color/DarkBlue" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"
+        android:layout_marginBottom="24dp" />
+
+    <!-- Driver ID Section -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="16dp">
+
+        <!-- Label for Driver ID -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/driver_id"
+            android:textColor="@color/DarkBlue"
+            android:textSize="18sp"
+            android:layout_marginEnd="8dp" />
+
+        <!-- Display Driver ID -->
+        <TextView
+            android:id="@+id/textViewDriverId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/DarkBlue"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+    <!-- Quantity Section -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="24dp">
+
+        <!-- Label for Quantity -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/quantity_of_boxes"
+            android:textColor="@color/DarkBlue"
+            android:textSize="18sp"
+            android:layout_marginEnd="8dp" />
+
+        <!-- Display Quantity -->
+        <TextView
+            android:id="@+id/textViewQuantity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/DarkBlue"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+    <!-- Email and Password Inputs -->
+    <EditText
+        android:id="@+id/editTextEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/email_address"
+        android:inputType="textEmailAddress"
+        android:textColor="@color/DarkBlue"
+        android:layout_marginBottom="16dp" />
+
+    <EditText
+        android:id="@+id/editTextPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/password"
+        android:inputType="textPassword"
+        android:textColor="@color/DarkBlue"
+        android:layout_marginBottom="24dp" />
+    <EditText
+        android:id="@+id/editTextPasscode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/enter_4_digit_passcode"
+        android:inputType="numberPassword"
+        android:maxLength="4"
+        android:textColor="@color/DarkBlue"
+        android:layout_marginBottom="24dp" />
+
+
+    <!-- Complete Delivery Button -->
+    <Button
+        android:id="@+id/buttonConfirmDelivery"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/confirm_delivery"
+        android:backgroundTint="@color/DarkBlue"
+        android:textColor="@android:color/white"
+        android:textSize="18sp" />
+    <!-- Footer Section -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:id="@+id/textViewFooter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/powered_by_assethub"
+            android:textColor="@color/DarkBlue"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+</LinearLayout>

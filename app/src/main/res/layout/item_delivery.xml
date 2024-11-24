@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <!-- Declare the binding variables -->
+        <variable
+            name="delivery"
+            type="com.example.assetsync.Delivery" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- ImageView to display the delivery captured image -->
+        <ImageView
+            android:id="@+id/imageViewCapturedImage"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginBottom="8dp"
+            android:contentDescription="@string/delivery_image"
+            android:src="@{delivery.image.isEmpty() ? @drawable/placeholder_image : delivery.image}" /> <!-- Data Binding for image -->
+
+        <!-- TextView for location -->
+        <TextView
+            android:id="@+id/textViewLocation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Location:"
+            android:textSize="16sp"
+            android:textColor="@color/DarkBlue"
+            android:textStyle="bold" />
+
+        <!-- TextView for quantity -->
+        <TextView
+            android:id="@+id/textViewQuantity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Quantity:"
+            android:textSize="16sp"
+            android:textColor="@color/DarkBlue"
+            android:textStyle="bold" />
+
+        <!-- TextView for status -->
+        <TextView
+            android:id="@+id/textViewStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Status:"
+            android:textSize="16sp"
+            android:textColor="@color/DarkBlue"
+            android:textStyle="bold" />
+
+        <!-- TextView for driver ID -->
+        <TextView
+            android:id="@+id/textViewDriverId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="DriverID:"
+            android:textSize="16sp"
+            android:textColor="@color/DarkBlue"
+            android:textStyle="bold" />
+
+        <!-- Button to continue with delivery and go to confirmation -->
+        <Button
+            android:id="@+id/buttonContinueDelivery"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Continue with Delivery"
+            android:layout_marginTop="8dp"
+            android:layout_gravity="center" />
+    </LinearLayout>
+
+</layout>
+
+
+
+
+
+

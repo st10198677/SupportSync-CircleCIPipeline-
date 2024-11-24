@@ -1,0 +1,12 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.AssetSync" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <item name="colorPrimary">@color/DarkBlue</item> <!-- Primary color for buttons and app bar -->
+        <item name="colorOnPrimary">@android:color/white</item> <!-- Text color on primary -->
+        <item name="colorSecondary">@color/DarkBlue</item> <!-- Secondary color for other elements -->
+        <item name="colorOnSecondary">@color/white</item> <!-- Text color on secondary -->
+    </style>
+
+    <style name="Theme.AssetSync" parent="Base.Theme.AssetSync" />
+</resources>

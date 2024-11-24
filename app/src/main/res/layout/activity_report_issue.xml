@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/background_spiral"
+    android:padding="16dp">
+
+    <!-- Title Text -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/report_issue"
+        android:textColor="@color/DarkBlue"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_gravity="center_horizontal"
+        android:paddingBottom="16dp" />
+
+    <!-- Asset Code (hidden or auto-filled) -->
+    <TextView
+        android:id="@+id/txtAssetCode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone" />
+
+    <!-- Issue Description Input -->
+    <EditText
+        android:id="@+id/edtIssueDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/describe_the_issue"
+        android:textColor="@color/white"
+        android:minLines="3"
+        android:gravity="top"
+        android:padding="8dp"
+        android:background="@color/gray"/>
+
+    <!-- Report Issue Button -->
+    <Button
+        android:id="@+id/btnSubmitIssue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="16dp"
+        android:text="@string/submit_issue" />
+</LinearLayout>
+

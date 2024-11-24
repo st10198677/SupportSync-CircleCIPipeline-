@@ -1,0 +1,15 @@
+<resources>
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/primaryColorDark</item>
+        <item name="colorPrimaryDark">@color/primaryDarkColorDark</item>
+        <item name="colorAccent">@color/accentColorDark</item>
+        <item name="android:background">@color/backgroundColorDark</item>
+        <item name="android:textColor">@color/textColorDark</item>
+        <item name="android:buttonStyle">@style/CustomButtonDark</item>
+    </style>
+
+    <style name="CustomButtonDark" parent="Widget.AppCompat.Button">
+        <item name="android:backgroundTint">@color/buttonColorDark</item>
+        <item name="android:textColor">@color/buttonTextColorDark</item>
+    </style>
+</resources>

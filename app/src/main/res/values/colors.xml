@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="Blue">#2ea3f2</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="DarkerWhite">#F0F0F0</color>
+    <color name="gray">#FC545654</color>
+    <color name="DarkBlue">#00072D</color>
+    <color name="green">#4CAF50</color> <!-- Green -->
+    <color name="red">#F44336</color>   <!-- Red -->
+
+    <!-- Light Mode Colors -->
+    <color name="primaryColorLight">#FFFFFF</color>  <!-- Light background -->
+    <color name="primaryDarkColorLight">#F0F0F0</color> <!-- Light primary dark -->
+    <color name="accentColorLight">#007AFF</color>    <!-- Accent color -->
+    <color name="backgroundColorLight">#FFFFFF</color> <!-- Light background -->
+    <color name="textColorLight">#000000</color>      <!-- Dark text -->
+    <color name="buttonColorLight">#007AFF</color>     <!-- Button color -->
+    <color name="buttonTextColorLight">#FFFFFF</color> <!-- Button text color -->
+
+    <!-- Dark Mode Colors -->
+    <color name="primaryColorDark">#1E1E1E</color>     <!-- Dark primary -->
+    <color name="primaryDarkColorDark">#121212</color>  <!-- Dark primary dark -->
+    <color name="accentColorDark">#2ea3f2</color>       <!-- Accent color -->
+    <color name="backgroundColorDark">#000000</color>    <!-- Black background -->
+    <color name="textColorDark">#E0E0E0</color>         <!-- Light text -->
+    <color name="buttonColorDark">#007AFF</color>        <!-- Button color -->
+    <color name="buttonTextColorDark">#FFFFFF</color>    <!-- Light button text -->
+</resources>

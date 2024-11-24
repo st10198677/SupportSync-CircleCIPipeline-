@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:gravity="center_horizontal"
+    android:background="@drawable/background_spiral">
+
+    <!-- Header Section -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:padding="8dp">
+
+        <ImageView
+            android:id="@+id/imageLogo"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_marginEnd="12dp"
+            android:contentDescription="@string/app_logo"
+            android:background="@drawable/rounded_logo_background"
+            android:padding="12dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/logo" />
+
+        <TextView
+            android:id="@+id/textViewHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/delivery_completion"
+            android:textColor="@color/DarkBlue"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_gravity="center_vertical" />
+    </LinearLayout>
+
+    <!-- Delivery Details -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/rounded_card"
+        android:padding="16dp"
+        android:layout_marginBottom="16dp">
+
+        <TextView
+            android:id="@+id/textViewLocation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/location"
+            android:textColor="@color/DarkBlue"
+            android:textSize="18sp"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:id="@+id/textViewDriverId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/driver_id"
+            android:textColor="@color/DarkBlue"
+            android:textSize="18sp"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:id="@+id/textViewQuantity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/quantity_of_boxes"
+            android:textColor="@color/DarkBlue"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+    <!-- Delivery Image -->
+    <ImageView
+        android:id="@+id/imageViewDelivery"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:layout_marginBottom="16dp"
+        android:scaleType="centerCrop"
+        android:background="@color/DarkBlue"
+        android:contentDescription="@string/delivery_image" />
+
+    <!-- Action Buttons Section -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginBottom="16dp"
+        android:weightSum="3">
+
+        <ImageButton
+            android:id="@+id/buttonSelectImage"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_weight="1"
+            android:src="@drawable/ic_camera"
+            android:contentDescription="@string/select_image"
+            android:background="@drawable/rounded_button"
+            android:layout_marginEnd="8dp"
+            android:scaleType="centerInside" />
+
+        <ImageButton
+            android:id="@+id/buttonConfirmDelivery"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_weight="1"
+            android:src="@drawable/ic_confirm"
+            android:contentDescription="@string/confirm_delivery"
+            android:background="@drawable/rounded_button"
+            android:layout_marginHorizontal="8dp"
+            android:scaleType="centerInside" />
+
+        <ImageButton
+            android:id="@+id/buttonLogout"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_weight="1"
+            android:src="@drawable/ic_logout"
+            android:contentDescription="@string/logout"
+            android:background="@drawable/rounded_button"
+            android:layout_marginStart="8dp"
+            android:scaleType="centerInside" />
+    </LinearLayout>
+
+    <!-- Footer -->
+    <TextView
+        android:id="@+id/textViewFooter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/powered_by_assethub"
+        android:textColor="@color/DarkBlue"
+        android:textSize="14sp"
+        android:layout_gravity="center" />
+</LinearLayout>
+
+

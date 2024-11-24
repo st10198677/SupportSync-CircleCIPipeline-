@@ -1,0 +1,49 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@drawable/background_spiral"
+    android:layout_marginBottom="8dp">
+
+    <!-- Asset Category -->
+    <TextView
+        android:id="@+id/txtAssetCategory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/asset_category"
+        android:textSize="16sp"
+        android:textColor="@color/DarkBlue"
+        android:textStyle="bold" />
+
+    <!-- Asset Make -->
+    <TextView
+        android:id="@+id/txtAssetMake"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/asset_make"
+        android:textSize="16sp"
+        android:textColor="@color/DarkBlue"
+        android:textStyle="bold" />
+
+    <!-- Asset Model -->
+    <TextView
+        android:id="@+id/txtAssetModel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/asset_model"
+        android:textSize="16sp"
+        android:textColor="@color/DarkBlue"
+        android:textStyle="bold" />
+
+    <!-- Button to report issue -->
+    <Button
+        android:id="@+id/btnReportIssue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/report_issue"
+        android:layout_marginTop="8dp"
+        android:layout_gravity="center" />
+</LinearLayout>
+
+
