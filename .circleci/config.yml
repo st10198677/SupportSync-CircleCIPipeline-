@@ -12,7 +12,7 @@ on:
 
 permissions:
   pull-requests: read  # Allows SonarQube to decorate PRs with analysis results
-
+  
 jobs:
   sonarQubeAnalysis:
     runs-on: ubuntu-latest
